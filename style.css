@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(39, 42, 45);
+    /* background-color: rgb(91, 92, 124); */
+    /* Fallback color */
+    color: white;
+}
+
+.wavy-text {
+    display: inline-block; /* Keeps the spans on the same line */
+}
+
+.word {
+    font-size: 50px;
+    animation: wavyFloat 4s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.5s);
+    /* color: #00ffd0; */
+    display: inline-block; /* Ensure spans are treated as inline-block elements */
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any padding */
+    letter-spacing: 0; /* Remove extra spacing */
+}
+ /* Ensure the modal and its content are styled */
+ .modalContent {
+    text-align: center; /* Center the content */
+}
+
+.modalBody {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.trophy-img {
+    width: 150px; /* Adjust size as needed */
+    margin-bottom: 20px; /* Space between image and text */
+}
+
+.falling-text {
+    display: inline-flex;
+    flex-wrap: wrap;
+    font-size: 50px; /* Adjust font size if needed */
+}
+
+.char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-20px); /* Start a little above the final position */
+    animation: fall 1s ease forwards;
+    animation-delay: calc(var(--i) * 0.1s); /* Staggered start */
+}
+.winMes{
+    font-size: 40px;
+}
+
+@keyframes fall {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Start from higher up */
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(10px); /* Midway point */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the final position */
+    }
+}
+
+@keyframes wavyFloat {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+section {
+    user-select: none;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Ensure the background image is behind other content */
+    opacity: 0.2;
+    /* Adjust opacity as needed */
+    background-image: url('backgr.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.mainHead {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    font-family: Bradley Hand, cursive;
+}
+
+.board {
+    display: flex;
+    justify-content: center;
+}
+
+.line {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.box {
+    height: 150px;
+    width: 150px;
+    margin: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    border: 2px solid white;
+    background-color: #e9e7fb;
+    opacity: 0.5;
+    font-size: Verdana, sans-serif;
+    text-shadow: h-offset v-offset blur-radius color;
+    color: rgb(206, 142, 255);
+    text-shadow: 5px 5px 7px rgba(37, 37, 37, 0.5);
+}
+
+.leftPart {
+    border: 2px solid white;
+    border-radius: 15px;
+    box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #b8b9be;
+    /* box-shadow:3px 3px 6px #b8b9be, -3px -3px 6px #2c2c2c; */
+    border: 0.0625rem solid transparent;
+    color: #98fdeb;
+    text-shadow: 5px 5px 7px rgb(61, 60, 60);
+}
+
+.leftPart:hover {
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #2c2c2c;
+}
+
+.rightPart {
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 15px;
+    height: 512px;
+    box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #b8b9be;
+    /* box-shadow:3px 3px 6px #b8b9be, -3px -3px 6px #2c2c2c; */
+    border: 0.0625rem solid transparent;
+    color: #98fdeb;
+    text-shadow: 5px 5px 7px rgb(61, 60, 60);
+}
+
+.rightPart:hover {
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #2c2c2c;
+}
+
+.names {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.namesCol {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 65%;
+}
+
+.intro {
+    height: 50%;
+}
+
+.pointsTable {
+    width: 50%;
+    height: 50%;
+    font-weight: 700;
+}
+
+.pointsTable2 {
+    width: 65%;
+}
+
+.playerSection {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.modal {
+    color: black;
+}
+
+.selectbtn {
+    border: 2px solid white;
+    display: flex;
+    padding: 15px;
+    border-radius: 15px;
+    justify-content: center;
+    box-shadow: 2px 2px 5px #b8b9be, -2px -2px 5px #b8b9be;
+    /* box-shadow:3px 3px 6px #b8b9be, -3px -3px 6px #2c2c2c; */
+    border: 0.0625rem solid transparent;
+}
+
+.btnS {
+    background-color: rgb(137, 138, 138);
+    font-size: initial;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    margin: 0px 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    box-shadow: 0 12px 24px rgba(33, 33, 33, 0.8);
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.btnS:hover {
+    background-color: rgb(32, 32, 32);
+    border: 2px solid rgb(68, 68, 68);
+    transform: translateY(-5px);
+}
+
+.giveDetails {
+    margin-top: 20px;
+}
+
+.form-check-label {
+    color: rgb(145, 68, 222);
+}
+
+#player1,
+#player2 {
+    height: 50px;
+    border: 2px solid rgb(74, 74, 74);
+    border-radius: 10px;
+    font-size: larger;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.btn:hover {
+    color: black;
+}
+
+.no-click {
+    pointer-events: none;
+    opacity: 0.5;
+    /* Optional: Make it visually apparent that the element is disabled */
+}
+
+.hidebutton {
+    border: 2px solid white;
+    visibility: hidden;
+}
+
+.accordion-header .accordion-button {
+    background-color: rgb(137, 138, 138);
+    /* Background color for the button */
+    color: black;
+    /* Text color for the button */
+    border: none;
+    /* Remove border from the button */
+    outline: none;
+    /* Remove default focus outline */
+    box-shadow: none;
+    /* Remove any default box-shadow */
+}
+
+/* Style the accordion items */
+.accordion-item {
+    background-color: #ffffff;
+    /* White background color for each accordion item */
+    border: 1px solid #2d2e2f;
+    /* Border color for accordion items */
+    border-radius: 5px;
+    /* Rounded corners for accordion items */
+}
+
+/* Style the accordion button (header) */
+.accordion-button {
+    background-color: rgb(29, 29, 29);
+    /* Blue background color for the button */
+    color: #ffffff;
+    /* White text color for the button */
+    border: none;
+    /* Remove border from the button */
+}
+
+/* Change background color on button hover */
+.accordion-button:hover {
+    background-color: rgb(32, 32, 32);
+    color: #ffffff;
+    border: 2px solid rgb(68, 68, 68);
+    /* Darker blue background on hover */
+}
+
+/* Style the accordion body */
+.accordion-body {
+    background-color: #6f6f6f;
+    /* White background color for the body */
+    color: #212529;
+    /* Dark text color for readability */
+}
+
+.trophy-img {
+    width: 100px;
+}
+
+#winnerMessage,
+#exampleModalLabelWin {
+    color: #4e4b6a;
+    font-weight: 900;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#trophy {
+    height: 200px;
+    width: 200px;
+    max-width: 100%;
+}
+
+/* Styles for touch devices */
+/* Override hover styles for touch devices */
+@media (pointer: coarse) {
+    .btnS:hover {
+        background-color: rgb(137, 138, 138);
+        /* Restore original color or adjust as needed */
+        border: 2px solid white;
+        transform: none;
+        /* Remove the translateY effect */
+    }
+}
+
+@media (max-width: 1400px) {
+    .box {
+        height: 170px;
+        width: 170px;
+    }
+
+    .rightPart {
+        height: 564px;
+    }
+
+    .btnS {
+        width: 140px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .box {
+        height: 130px;
+        width: 130px;
+    }
+
+    .btnS {
+        width: 130px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .box {
+        height: 110px;
+        width: 110px;
+    }
+
+    .rightPart {
+        height: 390px;
+    }
+
+    .btnS {
+        width: 120px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .box {
+        height: 90px;
+        width: 90px;
+    }
+
+    .rightPart {
+        height: 350px;
+    }
+
+    .btnS {
+        width: 110px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .box {
+        height: 70px;
+        width: 70px;
+    }
+
+    .mainHead {
+        height: 50px;
+    }
+
+    .rightPart {
+        height: 215px;
+    }
+
+    .btnS {
+        font-size: small;
+        width: 70px;
+        height: 50px;
+    }
+}
